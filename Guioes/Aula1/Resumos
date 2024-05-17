@@ -1,0 +1,25 @@
+//                                ABERTURA DO FICHEIRO
+//
+// int open(const char *path, int oflag, permissoes);      path é o caminho do ficheiro
+//                                                      oflag é o modo de abertura (O_RDONLY, O_WRONLY, O_TRUNC,  O_RDWR, ...)
+//                                                      permissões de acesso para O_CREAT (e.g. 0640 equivale a rw-r-----) 
+//                                                      se pode ler, escrever 
+//
+// devolve o file descriptor (fildes), se quisermos ler no stdin ele ja esta aberto com o fildes 0
+// se quisermos escrever no stdout ele tambem ja esta aberto com o fildes 1 
+//
+//                                 LEITURA DO FICHEIRO
+//
+// ssize_t read(int fildes, void *buf, size_t nbyte);     devolve número de bytes lidos ou erro
+//                                                        fildes - o descritor de ficheiro que temos quando abrimos o ficheiro
+//                                                        buf - o buffer para onde o conteudo é lido   ( char* buffer = malloc(sizeof(char) * 1024); ) 
+//                                                        nbyte - número max de bytes a ler  se o meu buffer tiver tamanho 100bytes e quiser ler 2000bytes da segmentation fault
+//
+//                                 ESCRITA NO FICHEIRO 
+// ssize_t write(int fildes, const void *buf, size_t nbyte);     devolve número de bytes escritos ou erro
+//                                                               fildes - o descritor de ficheiro que temos quando abrimos o ficheiro
+//                                                               buf - buffer com conteúdo a escrever
+//                                                               nbyte - número de bytes a escrever
+//
+//                                 FECHAR O FICHEIRO
+// int close(int fildes)                        devolve 0 caso a operação seja executada com sucesso, -1 caso contrário
