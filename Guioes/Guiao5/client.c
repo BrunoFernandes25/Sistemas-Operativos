@@ -17,6 +17,7 @@ int main (int argc, char * argv[]){
 	m.needle = atoi(argv[1]);
 	m.occurrences = 0;
 	m.pid = getpid();
+	m.type= 0;
 
 	char fifoc_name[30];
 	sprintf(fifoc_name, CLIENT "%d",m.pid );								// Cria o nome do FIFO do cliente baseado no seu PID
