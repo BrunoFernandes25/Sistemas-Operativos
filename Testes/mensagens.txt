@@ -1,0 +1,14 @@
+Este é um exemplo de linha de texto.
+Aqui está outro exemplo.
+Exemplo de como usar o grep.
+Exemplo de uma linha sem a palavra desejada.
+exempl
+exemplo
+Este é um exemplo de linha de texto.
+Aqui está outro exemplo.
+Exemplo de como usar o grep.
+Exemplo de uma linha sem a palavra desejada.
+Este é um exemplo de linha de texto.
+Aqui está outro exemplo.
+Exemplo de como usar o grep.
+Exemplo de uma linha sem a palavra desejada.
