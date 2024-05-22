@@ -30,24 +30,22 @@ void defeitos(char* imagens[n], int n, int max){
                     wait(&status);
                 }
             }
-
             _exit(0);
         }
-        else{   //pai vai ler anomalias recebidas do filho
-            close(fd[1]);
+    }
+    
+    //pai vai ler anomalias recebidas do filho
+    char anom[300];
+    ssize_t read_bytes;
 
-            char anom[300];
-            ssize_t read_bytes;
+    close(fd[1]);
+    while((read_bytes = read(fd[0],&anom,sizeof(anom))) > 0){
+        printf("%s \n", anom);
+    }
+    close(fd[0]);
 
-            while((read_bytes = read(fd[0],&anom,sizeof(anom))) > 0){
-                printf("%s \n", anom);
-            }
-            close(fd[0]);
-
-            for(int i=0;i<max;i++){
-                wait(&status);
-            }
-        }
+    for(int i=0;i<max;i++){
+        wait(&status);
     }
 }
 
@@ -68,13 +66,13 @@ void conta(char* imagens[n], int n){
     
       _exit(0);
     }
-    else{    //pai faz uso da função defeitos e espera o filho terminar
+    else{    //pai faz uso da função defeitos
       close(fd[0]);
       dup2(fd[1],1);
       close(fd[1]);
       
       defeitos(imagens,n,n/10);
 
-      wait(&status);  
+      wait(&status);  // espera o filho terminar
     }
 }
