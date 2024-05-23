@@ -1,0 +1,4 @@
+linha 1: teste
+linha 2: exemplo
+linha 3: cat
+linha 4: teste de filtro
